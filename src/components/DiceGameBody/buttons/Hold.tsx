@@ -9,7 +9,7 @@ function handleChange(
 ) {
   setPlayer((curr) => (curr === 1 ? 2 : 1));
   setCount((curr) => curr + value);
-  setCurrValue((curr) => (curr = 0));
+  setCurrValue(0);
 }
 
 const Hold = ({

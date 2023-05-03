@@ -19,7 +19,7 @@ const Roll = ({
   ) {
     let randomNum = Math.round(Math.random() * 10);
     if (randomNum === 1) {
-      setState((currentState) => (currentState = 0));
+      setState(0);
       setPlayer((currentPlayer) => (currentPlayer === 1 ? 2 : 1));
     } else if (randomNum > 6) {
       return setState((currentState) => currentState + (randomNum - 4));
