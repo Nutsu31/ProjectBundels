@@ -49,7 +49,7 @@ const GitHubUsers = () => {
       dispatch({ type: ACTIONS.CLEAR_USER, payload: { data: initialState } });
       setTimeout(() => {
         setCleaning(false);
-      }, 1000);
+      }, 200);
     } catch (err) {
       console.log(err);
     }
@@ -67,10 +67,19 @@ const GitHubUsers = () => {
     >
       <FindUser loading={loading} dispatch={dispatch} setLoading={setLoading} />
       <User user={user} />
-      <Button variant="contained" onClick={handleClean}>
-        <Delete />
-        {cleaning ? "Cleaning..." : "Clean"}
-      </Button>
+      <Box
+        sx={{
+          width: { xs: 200, sm: 250, md: 350, lg: 450, xl: 536 },
+          marginTop: 2,
+          display: "flex",
+          justifyContent: "flex-end",
+        }}
+      >
+        <Button variant="contained" onClick={handleClean}>
+          <Delete />
+          {cleaning ? "Cleaning..." : "Clean"}
+        </Button>
+      </Box>
     </Box>
   );
 };
