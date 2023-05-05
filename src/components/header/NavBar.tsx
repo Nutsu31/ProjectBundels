@@ -15,6 +15,7 @@ const NavBar = () => {
       <Link to="/todo-app">Todo</Link>
       <Link to="/pig-dice">Dice Roll</Link>
       <Link to="/blog">Blog</Link>
+      <Link to="/github-users">Github Users</Link>
     </Box>
   );
 };

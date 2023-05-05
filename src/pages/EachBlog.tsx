@@ -23,6 +23,8 @@ const EachBlog = () => {
     getData();
   }, [id]);
 
+  console.log(window.location.href);
+
   // function that takes params id and makes request to delete this object
   const handleDelete = () => {
     axios({

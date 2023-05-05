@@ -13,6 +13,7 @@ import "@fontsource/roboto/700.css";
 import PigDice from "./pages/PigDice";
 import Blog from "./pages/Blog";
 import EachBlog from "./pages/EachBlog";
+import GitHubUsers from "./pages/GitHubUsers";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -20,6 +21,7 @@ const router = createBrowserRouter(
       <Route path="/todo-app" element={<Todo />} />
       <Route path="/pig-dice" element={<PigDice />} />
       <Route path="/blog" element={<Blog />} />
+      <Route path="/github-users" element={<GitHubUsers />} />
       <Route path="/blog/:id" element={<EachBlog />} />
     </Route>
   )
