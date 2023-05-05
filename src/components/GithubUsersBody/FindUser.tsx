@@ -1,14 +1,7 @@
 import { Button, FormControl, TextField } from "@mui/material";
-import { useState } from "react";
 import { FieldValues, useForm } from "react-hook-form";
 import { ACTIONS } from "../../pages/GitHubUsers";
 import axios from "axios";
-
-interface FindUserType {
-  loading: boolean;
-  dispatch: React.Dispatch<string>;
-  setLoading: React.Dispatch<React.SetStateAction<boolean>>;
-}
 
 const FindUser = ({ loading, setLoading, dispatch }: FieldValues) => {
   const { register, reset, handleSubmit } = useForm();
