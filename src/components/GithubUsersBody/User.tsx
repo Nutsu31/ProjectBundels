@@ -38,19 +38,12 @@ const User = ({ user }: { user: UserType }) => {
             <h3>Followers: {user.followers}</h3>
             <h3>Repositories: {user.public_repos}</h3>
           </Box>
-          <Box
-            sx={{
-              display: "flex",
-              gap: 2,
-            }}
-          >
-            <img
-              src={user.avatar_url}
-              style={{ width: 60, borderRadius: "50%" }}
-            />
-            <h3>Following: {user.following}</h3>
-            <h3>Followers: {user.followers}</h3>
-            <h3>Repositories: {user.public_repos}</h3>
+          <Box>
+            <p>UserID: {user.id}</p>
+            <p>User Name: {user.name}</p>
+            <p>User Login: {user.login}</p>
+            <p>User Location: {user.location}</p>
+            <p>User URL: {user.url}</p>
           </Box>
         </>
       ) : null}
