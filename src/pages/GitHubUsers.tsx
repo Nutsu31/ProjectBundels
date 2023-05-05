@@ -1,7 +1,8 @@
-import { Box } from "@mui/material";
+import { Box, Button } from "@mui/material";
 import FindUser from "../components/GithubUsersBody/FindUser";
 import { useReducer, useState } from "react";
 import User, { UserType } from "../components/GithubUsersBody/User";
+import { Delete } from "@mui/icons-material";
 
 export const ACTIONS = {
   GET_USERS: "get-users",
@@ -39,7 +40,20 @@ const initialState = {
 };
 const GitHubUsers = () => {
   const [loading, setLoading] = useState(false);
+  const [cleaning, setCleaning] = useState(false);
   const [user, dispatch] = useReducer(reducer, initialState);
+
+  const handleClean = () => {
+    setCleaning(true);
+    try {
+      dispatch({ type: ACTIONS.CLEAR_USER, payload: { data: initialState } });
+      setTimeout(() => {
+        setCleaning(false);
+      }, 1000);
+    } catch (err) {
+      console.log(err);
+    }
+  };
 
   console.log(user);
   return (
@@ -53,6 +67,10 @@ const GitHubUsers = () => {
     >
       <FindUser loading={loading} dispatch={dispatch} setLoading={setLoading} />
       <User user={user} />
+      <Button variant="contained" onClick={handleClean}>
+        <Delete />
+        {cleaning ? "Cleaning..." : "Clean"}
+      </Button>
     </Box>
   );
 };
